@@ -2,6 +2,7 @@ package com.praticando.course.entities;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.praticando.course.entities.pk.OrderItemPK;
 
 import jakarta.persistence.EmbeddedId;
@@ -30,6 +31,7 @@ public class OrderItem implements Serializable {
 		this.price = price;
 	}
 
+	@JsonIgnore
 	public Order getOrder() {
 		return id.getOrder();
 	}
